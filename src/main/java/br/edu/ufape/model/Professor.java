@@ -1,6 +1,7 @@
 package br.edu.ufape.model;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -57,10 +58,10 @@ public class Professor {
 	private Instituicao instituicao;
 
 
-	@OneToMany(mappedBy="professor")
+	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="professor")
 	List<Formacao> formacoes;
 
-	@OneToMany(mappedBy="professor")
+	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="professor")
 	List<AreaAtuacao> areaAtuacao;
 
 

@@ -2,6 +2,8 @@ package br.edu.ufape.model;
 
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,7 +35,7 @@ public class Instituicao {
 	@NotEmpty (message = "Informe seu endereco")
 	private String endereco;
 	
-	@OneToMany(mappedBy="instituicao")
+	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="instituicao")
 	List<Professor> professores;	
 	
 	// Getters e Setters.

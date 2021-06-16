@@ -2,6 +2,8 @@ package br.edu.ufape.model;
 
 
 import java.sql.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -41,10 +43,10 @@ public class AreaAtuacao {
 	private Professor professor;
 	
 	
-	@OneToMany(mappedBy="areaatuacao")
+	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao")
 	List<AreaMenor> areaMenor;
 	
-	@OneToMany(mappedBy="areaatuacao")
+	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao")
 	List<AtividadeDesenvolvida> AtividadeDesenvolvida;
 	
 	
