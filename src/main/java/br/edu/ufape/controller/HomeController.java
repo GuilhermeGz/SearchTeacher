@@ -34,19 +34,4 @@ public class HomeController {
 		return "login";
 		
 	}
-	
-	@RequestMapping(value="/admin")
-	public String admin() {
-		
-		return "admin";
-		
-	}
-	
-	@RequestMapping(value="/aluno")
-	public String aluno() {
-		
-		return "aluno";
-		
-	}
-
 }
