@@ -30,7 +30,7 @@ public class Usuario {
 	@NotBlank(message = "Login não pode ser nulo")
 	private String login;
 	
-	@NotBlank(message="errou")
+	@NotBlank(message="Senha não pode ser nula")
 	private String senha;
 	
 	private Integer Ativo;

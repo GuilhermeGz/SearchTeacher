@@ -29,6 +29,8 @@
         <form:errors path="senha" cssclass="error"></form:errors>
         <br>
         
+        <h2>TESTE</h2>
+        
      	<c:out value="${errors}"></c:out>
      	
                 
