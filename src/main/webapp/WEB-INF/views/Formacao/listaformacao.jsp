@@ -11,25 +11,29 @@
 <head>
 
 <title>Lista Formacao</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
- 
 
-    <!-- Custom fonts for this template -->
-    <link href="../resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../resources/css/sb-admin-2.min.css" rel="stylesheet">
+<!-- Custom fonts for this template -->
+<link href="../resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
 
-    <!-- Custom styles for this page -->
-    <link href="../resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="../resources/css/sb-admin-2.min.css" rel="stylesheet">
+
+<!-- Custom styles for this page -->
+<link
+	href="../resources/vendor/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet">
 
 </head>
 <body id="page-top">
@@ -46,16 +50,9 @@
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.html">
-				
-				<div class="sidebar-brand-text mx-3">
-					 SearchTeacher
-				</div>
+
+				<div class="sidebar-brand-text mx-3">SearchTeacher</div>
 			</a>
-
-			
-
-			
-
 
 			<!-- Divider -->
 			<hr class="sidebar-divider">
@@ -63,25 +60,25 @@
 			<!-- Heading -->
 			<div class="sidebar-heading">Acesso</div>
 
-		
+
 
 			<!-- Nav Item - Professor -->
-			<li class="nav-item"><a class="nav-link" href="">
-				<i class="fas fa-chalkboard-teacher"></i> <span>Professor</span>
+			<li class="nav-item"><a class="nav-link" href=""> <i
+					class="fas fa-chalkboard-teacher"></i> <span>Professor</span>
 			</a></li>
 			<!-- Nav Item - Instituição -->
-			<li class="nav-item"><a class="nav-link" href="">
-					<i class="fas fa fa-university"></i> <span>Instituicao</span>
+			<li class="nav-item"><a class="nav-link" href=""> <i
+					class="fas fa fa-university"></i> <span>Instituicao</span>
 			</a></li>
 
 			<!-- Nav Item - Formação -->
 			<li class="nav-item"><a class="nav-link" href="/formacao/">
-				<i class="fas fa fa-graduation-cap"></i> <span>Formacao</span>
+					<i class="fas fa fa-graduation-cap"></i> <span>Formacao</span>
 			</a></li>
 
 			<!-- Nav Item - Area de atuação -->
-			<li class="nav-item"><a class="nav-link" href="">
-				<i class="fas fa fa-flask"></i> <span>Area Atuacao</span>
+			<li class="nav-item"><a class="nav-link" href=""> <i
+					class="fas fa fa-flask"></i> <span>Area Atuacao</span>
 			</a></li>
 
 			<!-- Nav Item - Pages Collapse Menu -->
@@ -140,8 +137,8 @@
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small"> Perfil </span> 
-								<img class="img-profile rounded-circle"
+								class="mr-2 d-none d-lg-inline text-gray-600 small">
+									Perfil </span> <img class="img-profile rounded-circle"
 								src="../resources/img/undraw_profile.svg">
 						</a> <!-- Dropdown - User Information -->
 							<div
@@ -173,22 +170,23 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800 m-0 font-weight-bold text-primary">Formacao</h1><br>
-		
+					<h1 class="h3 mb-2 text-gray-800 m-0 font-weight-bold text-primary">Formacao</h1>
+					<br>
+
 
 					<!-- DataTales Example -->
 					<div class="card shadow mb-4">
 
 						<div class="card-body">
-							
-								<a href="#"  data-toggle="modal" data-target="#cadastrarFormacao" class="btn btn-primary btn-icon-split">
-									<span class="icon text-white-50">
-										<i class="fas fa-plus"></i>
-									</span>
-									<span class="text">Cadastrar</span>
-								</a><br><br>
-							  
-							
+
+
+
+							<a href="/formacao/new2" type="button"
+								class="btn btn-primary btn-icon-split"> <span
+								class="icon text-white-50"> <i class="fas fa-plus"></i>
+							</span> <span class="text">Cadastrar</span>
+							</a><br>
+							<br>
 
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%"
@@ -202,49 +200,29 @@
 											<th>Opcoes</th>
 										</tr>
 									</thead>
-									
-									<tbody>	
-											<c:forEach var="formacao" items="${formacoes}">
-														<tr>
-															<td>${formacao.id}</td>
-															<td>${formacao.nome}</td>
-															<td>${formacao.ano}</td>
-															<td>${formacao.descricao}</td>
-															<td class="text-center">
-																<a href="/formacao/delete/${formacao.id}" class="btn btn-danger">
-																	<i class="fas fa-trash"></i>
-																</a>
-															
-																<a href="/formacao/update/${formacao.id}" class="btn btn-info ">
-																	<i class="fas fa-pen"></i>
-																</a>
-															</td>
-														</tr>
-											</c:forEach>
-	
+
+									<tbody>
+										<c:forEach var="formacao" items="${formacoes}">
+											<tr>
+												<td>${formacao.id}</td>
+												<td>${formacao.nome}</td>
+												<td>${formacao.ano}</td>
+												<td>${formacao.descricao}</td>
+												<td class="text-center"><a
+													href="/formacao/delete/${formacao.id}"
+													class="btn btn-danger"> <i class="fas fa-trash"></i>
+												</a> <a href="/formacao/update/${formacao.id}"
+													class="btn btn-info "> <i class="fas fa-pen"></i>
+												</a></td>
+											</tr>
+										</c:forEach>
+
 
 									</tbody>
 								</table>
 							</div>
 
-							<!-- Modal -->
-							<div class="modal fade" id="excluirFormacao" tabindex="-1" role="dialog" aria-labelledby="excluirFormacaoFormacaoLabel" aria-hidden="true">
-								<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-									<h5 class="modal-title" id="excluirFormacaoLabel">Ecluir Formacao</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-									</div>
-									
-									<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
-									</div>
-								</div>
-								</div>
-							</div>
+
 						</div>
 					</div>
 
@@ -311,7 +289,8 @@
 
 	<!-- Page level plugins -->
 	<script src="../resources/vendor/datatables/jquery.dataTables.min.js"></script>
-	<script src="../resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<script
+		src="../resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 	<!-- Page level custom scripts -->
 	<script src="../resources/js/demo/datatables-demo.js"></script>
