@@ -13,7 +13,7 @@ import br.edu.ufape.model.Perfil;
 import br.edu.ufape.model.Usuario;
 
 public class MyUserDetails implements UserDetails {
-	
+
 	/**
 	 * 
 	 */
@@ -22,36 +22,36 @@ public class MyUserDetails implements UserDetails {
 	private String password;
 	private boolean active;
 	private List<GrantedAuthority> authorities; //equivalente ao PERFIL/ROLE
-	
-	
+
+
 	public MyUserDetails(String userName) {
 		this.userName=userName;
 	}
-	
+
 	public MyUserDetails() {
-		
+
 	}
-	
-	 
+
+
 
 	public MyUserDetails(Usuario usuario) {
 		// TODO Auto-generated constructor stub
 		this.userName= usuario.getLogin();
 		this.password= usuario.getSenha();
 		this.active=(usuario.getAtivo())>0 ? true : false;
-		
+
 		List<Perfil> perfis = usuario.getPerfis();
 		//System.out.println("Um dos perfis de "+ usuario.getLogin() + " é "+ perfis.get(0).getDescricao());
 		List<GrantedAuthority> lista = new ArrayList<>();
-		
+
 		for (int i=0; i< perfis.size(); i++){
 			lista.add(new SimpleGrantedAuthority(perfis.get(i).getDescricao().toUpperCase()));	
 		}
-		
+
 		this.authorities = lista;
-		
-		
-		
+
+
+
 	}
 
 	@Override

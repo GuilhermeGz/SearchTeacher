@@ -4,10 +4,13 @@ package br.edu.ufape.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -49,6 +52,13 @@ public class Professor {
 	@Column(name="citacao_bibliografica")
 	private String citacaoBibliografica;
 	
+	 @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	 @JoinTable(
+	            name = "professor_formacao",
+	            joinColumns = @JoinColumn(name = "idprofessor"),
+	            inverseJoinColumns = @JoinColumn(name = "idformacao"))
+	private List<Formacao> formacoes = new ArrayList<Formacao>();
+	
 /*	@CPFValid
 	private String cpf;*/
 
@@ -56,10 +66,6 @@ public class Professor {
 	// Chave estrangeira
 	@JoinColumn(name = "id_instituicao")
 	private Instituicao instituicao;
-
-
-	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="professor")
-	List<Formacao> formacoes;
 
 	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="professor")
 	List<AreaAtuacao> areaAtuacao;
@@ -124,20 +130,20 @@ public class Professor {
 		this.instituicao = instituicao;
 	}
 
-	public List<Formacao> getFormacoes() {
-		return formacoes;
-	}
-
-	public void setFormacoes(List<Formacao> formacoes) {
-		this.formacoes = formacoes;
-	}
-
 	public List<AreaAtuacao> getAreaAtuacao() {
 		return areaAtuacao;
 	}
 
 	public void setAreaAtuacao(List<AreaAtuacao> areaAtuacao) {
 		this.areaAtuacao = areaAtuacao;
+	}
+
+	public List<Formacao> getFormacoes() {
+		return formacoes;
+	}
+
+	public void setFormacoes(List<Formacao> formacoes) {
+		this.formacoes = formacoes;
 	}
 
 

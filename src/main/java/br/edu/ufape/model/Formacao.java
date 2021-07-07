@@ -34,10 +34,6 @@ public class Formacao {
 	@NotEmpty (message = "Informe sua descrição")
 	private String descricao;
 
-	@OneToOne
-	// Chave estrangeira
-	@JoinColumn(name = "id_professor")
-	private Professor professor;
 	
 	// Getters e Setters.
 	
@@ -73,12 +69,5 @@ public class Formacao {
 		this.descricao = descricao;
 	}
 	
-	public Professor getProfessor() {
-		return professor;
-	}
-	
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
 
 }
