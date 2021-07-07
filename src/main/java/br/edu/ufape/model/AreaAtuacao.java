@@ -49,8 +49,6 @@ public class AreaAtuacao {
 	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao")
 	List<AtividadeDesenvolvida> AtividadeDesenvolvida;
 	
-	
-	 
 
 	// Getters e Setters.
 
