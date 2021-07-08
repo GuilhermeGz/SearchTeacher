@@ -74,7 +74,7 @@
 					class="fas fa-chalkboard-teacher"></i> <span>Professor</span>
 			</a></li>
 			<!-- Nav Item - Instituição -->
-			<li class="nav-item"><a class="nav-link" href=""> <i
+			<li class="nav-item"><a class="nav-link" href="/instituicao/"> <i
 					class="fas fa fa-university"></i> <span>Instituicao</span>
 			</a></li>
 
