@@ -33,7 +33,7 @@ public class InstituicaoController {
 
 	// Encaminhamento e captação no banco da pagina apresentada inicialmente.
 	// OBS:RequestMappin com dois "caminhos", podendo ser utilizado /all e / para o acesso.
-	@RequestMapping(value= {"/all", "/"})
+	@RequestMapping(value= {"/all", "/", ""})
 	public String findAllInstituicao(Model model) {
 
 		// Retorna uma lista de todos os obejtos de "Instituição".

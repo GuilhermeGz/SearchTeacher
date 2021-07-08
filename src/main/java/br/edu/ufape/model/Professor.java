@@ -18,6 +18,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import br.edu.ufape.validation.CPFValid;
 import br.edu.ufape.validation.MeuEmail;
 
@@ -58,18 +61,24 @@ public class Professor {
 	            joinColumns = @JoinColumn(name = "idprofessor"),
 	            inverseJoinColumns = @JoinColumn(name = "idformacao"))
 	private List<Formacao> formacoes = new ArrayList<Formacao>();
+	 
+	@ManyToMany(cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@JoinTable(
+	            name = "professor_areaatuacao",
+	            joinColumns = @JoinColumn(name = "idprof"),
+	            inverseJoinColumns = @JoinColumn(name = "idareaatuacao"))
+	private List<AreaAtuacao> areasAtuacoes = new ArrayList<AreaAtuacao>();
+	
 	
 /*	@CPFValid
 	private String cpf;*/
 
+	
 	@OneToOne
 	// Chave estrangeira
 	@JoinColumn(name = "id_instituicao")
 	private Instituicao instituicao;
-
-	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="professor")
-	List<AreaAtuacao> areaAtuacao;
-
 
 
 	// Getters e Setters.
@@ -130,20 +139,20 @@ public class Professor {
 		this.instituicao = instituicao;
 	}
 
-	public List<AreaAtuacao> getAreaAtuacao() {
-		return areaAtuacao;
-	}
-
-	public void setAreaAtuacao(List<AreaAtuacao> areaAtuacao) {
-		this.areaAtuacao = areaAtuacao;
-	}
-
 	public List<Formacao> getFormacoes() {
 		return formacoes;
 	}
 
 	public void setFormacoes(List<Formacao> formacoes) {
 		this.formacoes = formacoes;
+	}
+
+	public List<AreaAtuacao> getAreasAtuacoes() {
+		return areasAtuacoes;
+	}
+
+	public void setAreasAtuacoes(List<AreaAtuacao> areasAtuacoes) {
+		this.areasAtuacoes = areasAtuacoes;
 	}
 
 

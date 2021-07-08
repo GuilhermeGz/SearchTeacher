@@ -33,12 +33,11 @@ public class AreaAtuacaoController {
 
 	// Encaminhamento e captação no banco da pagina apresentada inicialmente.
 	// OBS:RequestMappin com dois "caminhos", podendo ser utilizado /all e / para o acesso.
-	@RequestMapping(value= {"/all", "/"})
+	@RequestMapping(value= {"/all", "/", ""})
 	public String findAllAreaAtuacao(Model model) {
 
 		// Retorna uma lista de todos os obejtos de "AreaAtuacao".
 		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
-		System.out.println(areasAtuacao.get(0).getProfessor().getNome()); 
 		// Passando para o modelo a colection/lista.
 		model.addAttribute("areasAtuacao", areasAtuacao);		
 		// Encaminha o fluxo para a view.

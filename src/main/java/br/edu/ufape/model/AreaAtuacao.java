@@ -35,12 +35,6 @@ public class AreaAtuacao {
 
 	@NotEmpty (message = "Informe sua descrição")
 	private String descricao;
-
-
-	@OneToOne
-	// Chave estrangeira
-	@JoinColumn(name = "id_prof")
-	private Professor professor;
 	
 	
 	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao")
@@ -84,14 +78,6 @@ public class AreaAtuacao {
 		this.descricao = descricao;
 	}
 
-	public Professor getProfessor() {
-		return professor;
-	}
-
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
-
 	public List<AreaMenor> getAreaMenor() {
 		return areaMenor;
 	}
@@ -110,8 +96,7 @@ public class AreaAtuacao {
 
 	@Override
 	public String toString() {
-		return "AreaAtuacao [id=" + id + ", nome=" + nome + ", ano=" + ano + ", descricao=" + descricao + ", professor="
-				+ professor + "]";
+		return "AreaAtuacao [id=" + id + ", nome=" + nome + ", ano=" + ano + ", descricao=" + descricao + "]";
 	}
 
 
