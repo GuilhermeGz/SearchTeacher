@@ -28,9 +28,14 @@ public class Instituicao {
 	private Long id;
 	
 	@NotNull
-	@Size(min=3,max=20, message="O nome deve conter de 3 a 20 letras")
+	@Size(min=3,max=30, message="O nome deve conter de 3 a 30 letras")
 	private String nome;
 	
+	@NotNull
+	@Size(min=3,max=20, message="A sigla deve conter de 2 a 6 letras")
+	private String sigla;
+	
+
 	@NotNull
 	@NotEmpty (message = "Informe seu endereco")
 	private String endereco;
@@ -54,6 +59,13 @@ public class Instituicao {
 	
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getSigla() {
+		return sigla;
+	}
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
 	}
 	
 	public String getEndereco() {

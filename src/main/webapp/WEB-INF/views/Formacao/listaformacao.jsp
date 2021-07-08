@@ -208,12 +208,15 @@
 												<td>${formacao.nome}</td>
 												<td>${formacao.ano}</td>
 												<td>${formacao.descricao}</td>
-												<td class="text-center"><a
+												<td class="text-center">
+												<a
 													href="/formacao/delete/${formacao.id}"
 													class="btn btn-danger"> <i class="fas fa-trash"></i>
-												</a> <a href="/formacao/update/${formacao.id}"
+												</a> 
+												<a href="/formacao/update/${formacao.id}"
 													class="btn btn-info "> <i class="fas fa-pen"></i>
-												</a></td>
+												</a>
+											</td>
 											</tr>
 										</c:forEach>
 
