@@ -84,7 +84,7 @@ public class AreaMenorController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Area Menor alterada com sucesso!");
 		// Encaminha o fluxo para a url.
-		return "forward:/areamenor/all";
+		return "redirect:/areamenor/all";
 	}
 
 
@@ -105,7 +105,7 @@ public class AreaMenorController {
 			model.addAttribute("errors","Area Menor não encontrada!");
 		}
 		// Encaminha o fluxo para a url.
-		return "forward:/areamenor/all";	
+		return "redirect:/areamenor/all";	
 	}
 
 
@@ -137,7 +137,7 @@ public class AreaMenorController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Area Menor cadastrada com sucesso");
 		// Encaminha o fluxo para a url.
-		return "forward:/areamenor/all";
+		return "redirect:/areamenor/all";
 	} 
 
 }

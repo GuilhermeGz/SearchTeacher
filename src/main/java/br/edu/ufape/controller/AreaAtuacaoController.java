@@ -84,7 +84,7 @@ public class AreaAtuacaoController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Area de Atuacao alterada com sucesso!");
 		// Encaminha o fluxo para a url.
-		return "forward:/areaatuacao/all";
+		return "redirect:/areaatuacao/all";
 	}
 
 
@@ -106,7 +106,7 @@ public class AreaAtuacaoController {
 			model.addAttribute("errors","Area de Atuacao não encontrada!");
 		}
 		// Encaminha o fluxo para a url.
-		return "forward:/areaatuacao/all";	
+		return "redirect:/areaatuacao/all";	
 	}
 
 
@@ -138,7 +138,7 @@ public class AreaAtuacaoController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Area de Atuacao cadastrada com sucesso");
 		// Encaminha o fluxo para a url.
-		return "forward:/areaatuacao/all";
+		return "redirect:/areaatuacao/all";
 	} 
 
 }

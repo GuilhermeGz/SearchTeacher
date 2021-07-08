@@ -83,7 +83,7 @@ public class AtividadeDesenvolvidaController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Atividade Desenvolvida alterada com sucesso!");
 		// Encaminha o fluxo para a url.
-		return "forward:/atividadedesenvolvida/all";
+		return "redirect:/atividadedesenvolvida/all";
 	}
 
 
@@ -104,7 +104,7 @@ public class AtividadeDesenvolvidaController {
 			model.addAttribute("errors","Atividade Desenvolvida não encontrada!");
 		}
 		// Encaminha o fluxo para a url.
-		return "forward:/atividadedesenvolvida/all";	
+		return "redirect:/atividadedesenvolvida/all";	
 	}
 
 
@@ -136,7 +136,7 @@ public class AtividadeDesenvolvidaController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Atividade Desenvolvida cadastrada com sucesso");
 		// Encaminha o fluxo para a url.
-		return "forward:/atividadedesenvolvida/all";
+		return "redirect:/atividadedesenvolvida/all";
 	} 
 
 }

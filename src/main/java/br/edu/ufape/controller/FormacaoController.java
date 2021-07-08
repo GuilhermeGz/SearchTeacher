@@ -83,7 +83,7 @@ public class FormacaoController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Formacao alterada com sucesso!");
 		// Encaminha o fluxo para a url.
-		return "forward:/formacao/all";
+		return "redirect:/formacao/all";
 	}
 
 
@@ -104,7 +104,7 @@ public class FormacaoController {
 			model.addAttribute("errors","Formacao não encontrada!");		
 		}
 		//Encaminha o fluxo para a url.
-		return "forward:/formacao/all";	
+		return "redirect:/formacao/all";	
 	}
 
 
@@ -135,7 +135,7 @@ public class FormacaoController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Formacao cadastrada com sucesso");
 		// Encaminha o fluxo para a url.
-		return "forward:/formacao/all";
+		return "redirect:/formacao/all";
 
 	} 
 

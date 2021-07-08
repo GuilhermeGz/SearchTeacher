@@ -83,7 +83,7 @@ public class InstituicaoController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Instituicao alterada com sucesso!");
 		// Encaminha o fluxo para a url.
-		return "forward:/instituicao/all";
+		return "redirect:/instituicao/all";
 	}
 
 
@@ -104,7 +104,7 @@ public class InstituicaoController {
 			model.addAttribute("errors","Instituicao não encontrada!");
 		}
 		// Encaminha o fluxo para a url.
-		return "forward:/instituicao/all";	
+		return "redirect:/instituicao/all";	
 	}
 
 
@@ -136,7 +136,7 @@ public class InstituicaoController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Instituicao cadastrada com sucesso");
 		// Encaminha o fluxo para a url.
-		return "forward:/instituicao/all";
+		return "redirect:/instituicao/all";
 	} 
 
 }

@@ -85,7 +85,7 @@ public class ProfessorController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Professor alterado com sucesso!");
 		// Encaminha o fluxo para a url.
-		return "forward:/professor/all";
+		return "redirect:/professor/all";
 	}
 
 
@@ -106,7 +106,7 @@ public class ProfessorController {
 			model.addAttribute("errors","Professor não encontrado!");
 		}
 		// Encaminha o fluxo para a url.		
-		return "forward:/professor/all";	
+		return "redirect:/professor/all";	
 	}
 
 
@@ -137,7 +137,7 @@ public class ProfessorController {
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Professor cadastrado com sucesso");
 		// Encaminha o fluxo para a url.
-		return "forward:/professor/all";
+		return "redirect:/professor/all";
 	}
 
 }
