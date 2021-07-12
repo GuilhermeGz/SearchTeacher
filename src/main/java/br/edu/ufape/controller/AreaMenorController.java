@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.edu.ufape.repository.AreaAtuacaoDAOI;
 import br.edu.ufape.repository.AreaMenorDAOI;
+import br.edu.ufape.model.AreaAtuacao;
 import br.edu.ufape.model.AreaMenor;
 
 @Controller
@@ -29,6 +31,8 @@ public class AreaMenorController {
 	// Para a persistencia de dados.
 	@Autowired
 	AreaMenorDAOI areaMenorDAOI;
+	@Autowired
+	AreaAtuacaoDAOI areaAtuacaoDAOI;
 
 
 	// Encaminhamento e captação no banco da pagina apresentada inicialmente.
@@ -112,7 +116,9 @@ public class AreaMenorController {
 	//Cria uma nova AreaMenor.
 	@RequestMapping(value= "/new")
 	public String novo(Long id, Model model) {
-
+		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("areasAtuacao", areasAtuacao);
 		//Cria e passa para o model uma "AreaMenor" vazia.
 		model.addAttribute("areaMenorForm", new AreaMenor());
 		//Encaminha o fluxo para a view, que irá possibilitar o preenchimento dos dados.
@@ -131,7 +137,7 @@ public class AreaMenorController {
 		if(bindingResult.hasErrors( )) {
 			return "AreaMenor/newareamenor";
 		}
-
+	
 		// Salva as alterações realizadas através do form.
 		areaMenorDAOI.save(form);
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
