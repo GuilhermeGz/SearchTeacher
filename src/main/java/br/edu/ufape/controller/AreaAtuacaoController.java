@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.edu.ufape.repository.AreaAtuacaoDAOI;
+import br.edu.ufape.repository.AreaMenorDAOI;
 import br.edu.ufape.model.AreaAtuacao;
+import br.edu.ufape.model.AreaMenor;
 
 @Controller
 // Definindo a "url" quando estamos nos referindo a AreaAtuacao.
@@ -29,6 +31,9 @@ public class AreaAtuacaoController {
 	// Para a persistencia de dados.
 	@Autowired
 	AreaAtuacaoDAOI areaAtuacaoDAOI;
+	
+	@Autowired
+	AreaMenorDAOI areaMenorDAOI;
 
 
 	// Encaminhamento e captação no banco da pagina apresentada inicialmente.
@@ -38,8 +43,10 @@ public class AreaAtuacaoController {
 
 		// Retorna uma lista de todos os obejtos de "AreaAtuacao".
 		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+		//List<AreaMenor> areasMenores = areaMenorDAOI.findAll();
 		// Passando para o modelo a colection/lista.
-		model.addAttribute("areasAtuacao", areasAtuacao);		
+		model.addAttribute("areasAtuacao", areasAtuacao);
+		model.addAttribute("areaMenorForm", new AreaMenor());
 		// Encaminha o fluxo para a view.
 		return "AreaAtuacao/listaareaatuacao";
 	}
@@ -80,6 +87,7 @@ public class AreaAtuacaoController {
 
 		// Salvando as alterações realizadas através do form.
 		areaAtuacaoDAOI.save(form);
+		model.toString();
 		// Mensagem que irá ser apresentada logo acima da tabela apresentada.
 		model.addAttribute("msgs", "Area de Atuacao alterada com sucesso!");
 		// Encaminha o fluxo para a url.

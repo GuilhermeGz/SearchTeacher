@@ -35,8 +35,8 @@
 		                <td>${atividadeDesenvolvida.id}</td>
 		                <td>${atividadeDesenvolvida.descricao}</td>
 		                <td>${atividadeDesenvolvida.tipoAtividade}</td>
-		                <td>${atividadeDesenvolvida.dataInicio}</td>
-		                <td>${atividadeDesenvolvida.dataFim}</td>
+		                <td>${atividadeDesenvolvida.exibirDataInicio}</td>
+		                <td>${atividadeDesenvolvida.exibirDataFinal}</td>
 		                
 		                
 		                <td><a href="/atividadedesenvolvida/update/${atividadeDesenvolvida.id}">Atualizar</a></td>

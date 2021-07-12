@@ -2,7 +2,8 @@ package br.edu.ufape.model;
 
 
 
-import java.sql.Date;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,8 +15,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 @Entity 
 // Referindo-se a tebela no banco.
@@ -35,10 +39,14 @@ public class AtividadeDesenvolvida {
 	@Column(name="tipo_atividade")
 	private String tipoAtividade;
 	
+	@Past (message="Não é aceito datas futuras")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	@Column(name="data_inicio")
 	private Date dataInicio;
 	
+	@Past (message="Não é aceito datas futuras")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	@Column(name="data_fim")
 	private Date dataFim;
@@ -98,6 +106,17 @@ public class AtividadeDesenvolvida {
 		this.areaatuacao = areaatuacao;
 	}
 
+	public String getExibirDataInicio()
+	{
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		return formato.format(getDataInicio());
+	}
+	
+	public String getExibirDataFinal()
+	{
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		return formato.format(getDataFim());
+	}
 
 
 }

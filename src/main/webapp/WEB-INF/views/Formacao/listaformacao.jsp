@@ -18,6 +18,16 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+	<script>
+	var formattedDate = new Date("yourUnformattedOriginalDate");
+	var d = formattedDate.getDate();
+	var m =  formattedDate.getMonth();
+	m += 1;  // JavaScript months are 0-11
+	var y = formattedDate.getFullYear();
+
+	$("#dt").val(d + "." + m + "." + y);
+	</script>
+
 
 
 <!-- Custom fonts for this template -->
@@ -203,6 +213,7 @@
 
 									<tbody>
 										<c:forEach var="formacao" items="${formacoes}">
+										
 											<tr>
 												<td>${formacao.id}</td>
 												<td>${formacao.nome}</td>
@@ -297,7 +308,7 @@
 
 	<!-- Page level custom scripts -->
 	<script src="../resources/js/demo/datatables-demo.js"></script>
-
+ 	
 </body>
 
 

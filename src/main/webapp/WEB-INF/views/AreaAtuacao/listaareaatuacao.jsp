@@ -208,7 +208,7 @@
 												<td>${areaAtuacao.id}</td>
 												<td>${areaAtuacao.nome}</td>
 												<td>${areaAtuacao.descricao}</td>
-												<td>${areaAtuacao.ano}</td>
+												<td>${areaAtuacao.exibirData}</td>
 												<td class="text-center">
 													<a
 														href="/areaatuacao/delete/${areaAtuacao.id}"
@@ -219,9 +219,7 @@
 													</a>
 												</td>
 												<td class="text-center">
-												
-													<button href="#" class="btn btn-primary btn-icon-split"
-														type="submit">
+													<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 														<span class="text">Sub</span>
 													</button>
 												</td>	
@@ -241,7 +239,48 @@
 
 
 						</div>
+
 					</div>
+
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							</div>
+							<div class="modal-body">
+								<form:form method="POST" modelAttribute="areaMenorForm" action="/areamenor/new2">
+	
+        
+								<label for="nome">Nome</label>
+								<form:input path="nome" cssClass="form-control" id="nome"/>
+								<form:errors path="nome" cssclass="error"></form:errors>
+								
+								<br>
+								
+								<label for="descricao">Descricao</label>
+								<form:input path="descricao" cssClass="form-control" id="email"/>
+								<form:errors path="descricao" cssclass="error"></form:errors>
+								
+								<br>
+								
+								<input type="submit" value="Adicionar" class="btn">
+								 
+								
+							</form:form>
+							</div>
+							<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div>
+						</div>
+					</div>
+  
 
 				</div>
 				<!-- /.container-fluid -->
@@ -313,6 +352,4 @@
 	<script src="../resources/js/demo/datatables-demo.js"></script>
 
 </body>
-
-
 </html>

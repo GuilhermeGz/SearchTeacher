@@ -1,7 +1,8 @@
 package br.edu.ufape.model;
 
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity 
 // Referindo-se a tebela no banco.
@@ -28,6 +33,8 @@ public class Formacao {
 	@Size(min=5,max=20, message="O nome deve conter de 5 a 20 letras")
 	private String nome;
 
+	@Past (message="Não é aceito datas futuras")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date ano;
 
