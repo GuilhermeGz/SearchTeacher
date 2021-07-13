@@ -235,8 +235,23 @@
                                                             <br />
                                                             <form:select path="areaatuacao.id"
                                                                 cssclass="form-control mb-3">
-                                                                <form:options items="${areasAtuacao}"
-                                                                    itemLabel="nome" />
+                                                                <c:forEach var="item" items="${areasAtuacao}">
+                                                                
+	                                                                <c:choose>
+		                                                                <c:when test="${item.getId()==selecionado}">
+			                                                                <form:option selected="true" value="${item.id}">
+			                                                                ${item.nome}
+			                                                                </form:option>
+			                                                            </c:when>
+			                                                            <c:otherwise>
+			                                                                <form:option value="${item.id}">
+			                                                                ${item.nome}
+			                                                                </form:option>
+		                                                                </c:otherwise>
+	                                                                </c:choose>
+                                                               
+                                                                
+                                                                </c:forEach>
                                                             </form:select>
                                                         </div>
                                                     </div>

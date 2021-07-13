@@ -53,10 +53,16 @@ public class AtividadeDesenvolvidaController {
 	@RequestMapping(value= "/update/{id}" )
 	public String update(@PathVariable("id") Long id, Model model) {
 
+		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("areasAtuacao", areasAtuacao);
+		
 		// Procura o objeto  AtividadeDesenvolvida pelo seu id.
 		Optional<AtividadeDesenvolvida> atividadeDesenvolvida = atividadeDesenvolvidaDAOI.findById(id);
 		// Passando para o modelo o objeto captado acima.
 		model.addAttribute("atividadeDesenvolvidaForm", atividadeDesenvolvida.get());
+		// Declaração de quem foi selecionadona lista.
+	    model.addAttribute("selecionado", atividadeDesenvolvida.get().getAreaatuacao().getId());
 		// Verifica se o obejto está vazio.			
 		if (!atividadeDesenvolvida.isEmpty()) {
 			// Encaminha o fluxo para a view.
