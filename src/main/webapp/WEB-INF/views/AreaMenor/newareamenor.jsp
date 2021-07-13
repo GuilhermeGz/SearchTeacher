@@ -207,10 +207,8 @@
 														<div class="form-group">
 															<label>Área de Atuação:</label>
 															<br />
-															<form:select path="areaatuacao.id"
-																cssclass="form-control mb-3">
-																<form:options items="${areasAtuacao}"
-																	itemLabel="nome" />
+															<form:select path="areaatuacao.id" cssClass="form-select form-select-lg mb-3">
+																<form:options items="${areasAtuacao}" itemLabel="nome" />
 															</form:select>
 														</div>
 													</div>
