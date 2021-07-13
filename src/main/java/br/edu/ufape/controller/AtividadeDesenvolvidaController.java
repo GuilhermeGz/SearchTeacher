@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.edu.ufape.repository.AreaAtuacaoDAOI;
 import br.edu.ufape.repository.AtividadeDesenvolvidaDAOI;
+import br.edu.ufape.model.AreaAtuacao;
 import br.edu.ufape.model.AtividadeDesenvolvida;
 
 @Controller
@@ -29,6 +31,8 @@ public class AtividadeDesenvolvidaController {
 	// Para a persistencia de dados.
 	@Autowired
 	AtividadeDesenvolvidaDAOI atividadeDesenvolvidaDAOI;
+	@Autowired
+	AreaAtuacaoDAOI areaAtuacaoDAOI;
 
 
 	// Encaminhamento e captação no banco da pagina apresentada inicialmente.
@@ -112,6 +116,10 @@ public class AtividadeDesenvolvidaController {
 	@RequestMapping(value= "/new")
 	public String novo(Long id, Model model) {
 
+		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("areasAtuacao", areasAtuacao);
+		//Cria e passa para o model uma "AreaMenor" vazia.
 		//Cria e passa para o model uma " AtividadeDesenvolvida" vazia.
 		model.addAttribute("atividadeDesenvolvidaForm", new AtividadeDesenvolvida());
 		//Encaminha o fluxo para a view, que irá possibilitar o preenchimento dos dados.
