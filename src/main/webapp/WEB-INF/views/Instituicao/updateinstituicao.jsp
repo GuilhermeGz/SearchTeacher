@@ -1,8 +1,6 @@
-<%@page import="br.edu.ufape.model.Formacao"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
-
+<%@page import="br.edu.ufape.model.Instituicao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -11,14 +9,13 @@
 
 <head>
 
-<title>Editar Formacao</title>
+<title>Editar Instituição</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-
 
 
 <!-- Custom fonts for this template -->
@@ -56,11 +53,6 @@
 				<div class="sidebar-brand-text mx-3">SearchTeacher</div>
 			</a>
 
-
-
-
-
-
 			<!-- Divider -->
 			<hr class="sidebar-divider">
 
@@ -68,31 +60,40 @@
 			<div class="sidebar-heading">Acesso</div>
 
 
-
 			<!-- Nav Item - Professor -->
-			<li class="nav-item"><a class="nav-link" href=""> <i
+			<li class="nav-item"><a class="nav-link" href="/professor/"> <i
 					class="fas fa-chalkboard-teacher"></i> <span>Professor</span>
 			</a></li>
 			<!-- Nav Item - Instituição -->
 			<li class="nav-item"><a class="nav-link" href="/instituicao/"> <i
-					class="fas fa fa-university"></i> <span>Instituicao</span>
+					class="fas fa fa-university"></i> <span>Instituição</span>
 			</a></li>
 
 			<!-- Nav Item - Formação -->
 			<li class="nav-item"><a class="nav-link" href="/formacao/">
-					<i class="fas fa fa-graduation-cap"></i> <span>Formacao</span>
+					<i class="fas fa fa-graduation-cap"></i> <span>Formação</span>
 			</a></li>
 
 			<!-- Nav Item - Area de atuação -->
-			<li class="nav-item"><a class="nav-link" href=""> <i
-					class="fas fa fa-flask"></i> <span>Area Atuacao</span>
+			<li class="nav-item"><a class="nav-link" href="/areaatuacao/"> <i
+					class="fas fa fa-flask"></i> <span>Area Atuação</span>
+			</a></li>
+
+			<!-- Nav Item - Area de SubArea -->
+			<li class="nav-item"><a class="nav-link" href="/areamenor/"> 
+				<i class="fas fa fa-flask"></i> <span>Subárea</span>
+			</a></li>
+
+			<!-- Nav Item - Area de Atividade -->
+			<li class="nav-item"><a class="nav-link" href="/atividadedesenvolvida/"> 
+				<i class="fas fa fa-flask"></i> <span>Atividade Desenvolvida</span>
 			</a></li>
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
 				data-toggle="collapse" data-target="#collapseTwo"
 				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-cog"></i> <span>Configuracoes</span>
+					class="fas fa-fw fa-cog"></i> <span>Configurações</span>
 			</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 					data-parent="#accordionSidebar">
@@ -177,13 +178,14 @@
 				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800 m-0 font-weight-bold text-primary">Editar
-						Instituicao</h1>
-					<br>
-
+				
 
 					<div class="card shadow mb-4">
-
+						<div class="card-title ml-4	mt-4">
+							<h4>Editar Instituição</h4>
+						</div>
+						
+						<hr class="sidebar-divider mt-2 d-md-block">
 						<div class="card-body">
 
 						
@@ -193,22 +195,34 @@
                             <form:hidden path="id" cssClass="form-control"/>
 
 
-                            <label for="nome">Nome</label>
-                            <form:input path="nome" cssClass="form-control"/>
-                            <form:errors path="nome" cssclass="error"></form:errors>
-                            <br>
-                            <label for="sigla">Sigla</label>
-                            <form:input path="sigla" cssClass="form-control"/>
-                            <form:errors path="sigla" cssclass="error"></form:errors>
-
-                            <br>
-
-                            <label for="endereco">Endereco</label>
-                            <form:input path="endereco" cssClass="form-control"/>
-                            <form:errors path="endereco" cssclass="error"></form:errors>
-
-                            <br>
-
+							<div class="row">
+								<div class="col-lg-8">
+									<div class="form-group">
+										<label>Nome</label><br>
+										<form:input path="nome" cssClass="form-control" id="nome"/>   
+										<form:errors path="nome"></form:errors>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group">
+										<label for="sigla">Sigla</label>
+										<form:input path="sigla" cssClass="form-control" id="sigla"/>   
+										<form:errors path="sigla"></form:errors>
+									</div>
+								</div>
+							</div>
+						   
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<label for="endereco">Endereço</label>
+										<form:input path="endereco" cssClass="form-control"/>
+										<form:errors path="endereco"></form:errors>
+									</div>
+								</div>
+							</div>
+                           
+							<hr class="sidebar-divider mt-2 d-md-block">
                             <button href="#" class="btn btn-primary btn-icon-split"
                             type="submit">
                                 <span class="icon text-white-50"> <i class="fas fa-pen"></i>
@@ -216,12 +230,11 @@
                             </button>
     
                             <br>
-                            <br>
 
 
                         </form:form>
                        
-
+						</div>
 						</div>
 					</div>
 

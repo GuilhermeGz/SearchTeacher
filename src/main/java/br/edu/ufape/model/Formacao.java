@@ -43,7 +43,6 @@ public class Formacao {
 
 	
 	// Getters e Setters.
-	
 	public Long getId() {
 		return id;
 	}

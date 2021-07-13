@@ -35,9 +35,8 @@ public class Instituicao {
 	@Size(min=3,max=20, message="A sigla deve conter de 2 a 6 letras")
 	private String sigla;
 	
-
 	@NotNull
-	@NotEmpty (message = "Informe seu endereco")
+	@NotEmpty(message = "Informe seu endereco")
 	private String endereco;
 	
 	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="instituicao")
