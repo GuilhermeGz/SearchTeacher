@@ -195,9 +195,14 @@
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label>Instituição</label>
-                                                            <select class=" form-control mb-3">
-                                                                <option value="0" disabled>Selecione</option>
-                                                            </select>
+                                                            <br/>
+                                                            <form:select path="instituicao.id"
+																cssclass="form-control mb-3">
+																<form:options items="${instituicoes}"
+																	itemLabel="nome" />
+															</form:select>
+                                                            
+													        
                                                         </div>
                                                     </div>
                                                    

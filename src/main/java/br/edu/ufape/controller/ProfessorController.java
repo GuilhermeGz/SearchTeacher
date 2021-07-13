@@ -15,8 +15,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.edu.ufape.model.AreaAtuacao;
+import br.edu.ufape.model.AreaMenor;
+import br.edu.ufape.model.AtividadeDesenvolvida;
 import br.edu.ufape.model.Instituicao;
 import br.edu.ufape.model.Professor;
+import br.edu.ufape.repository.AreaAtuacaoDAOI;
+import br.edu.ufape.repository.AreaMenorDAOI;
+import br.edu.ufape.repository.AtividadeDesenvolvidaDAOI;
+import br.edu.ufape.repository.InstituicaoDAOI;
 import br.edu.ufape.repository.ProfessorDAOI;
 
 
@@ -31,6 +38,14 @@ public class ProfessorController {
 	// Para a persistencia de dados.
 	@Autowired
 	ProfessorDAOI professorDAOI;
+	@Autowired
+	InstituicaoDAOI instituicaoDAOI;
+	@Autowired
+	AreaAtuacaoDAOI areaAtuacaoDAOI;
+	@Autowired
+	AreaMenorDAOI areaMenorDAOI;
+	@Autowired
+	AtividadeDesenvolvidaDAOI atividadeDesenvolvidaDAOI;
 
 
 	// Encaminhamento e captação no banco da pagina apresentada inicialmente.
@@ -114,6 +129,18 @@ public class ProfessorController {
 	@RequestMapping(value= "/new")
 	public String novo(Long id, Model model) {
 
+		List<Instituicao> instituicoes = instituicaoDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("instituicoes", instituicoes);
+		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("areasAtuacao", areasAtuacao);
+		List<AreaMenor> areasMenores = areaMenorDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("areasMenores", areasMenores);
+		List<AtividadeDesenvolvida> atividades = atividadeDesenvolvidaDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("atividades", atividades);
 		// Cria e passa para o model uma "Professor" vazia.
 		model.addAttribute("professorForm", new Professor());
 		// Encaminha o fluxo para a view, que irá possibilitar o preenchimento dos dados.
