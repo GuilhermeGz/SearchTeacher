@@ -44,6 +44,7 @@
 		<!-- Sidebar -->
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			style="background-image: url('../../resources/index/assets/img/bg-masthead.jpg')"
 			id="accordionSidebar">
 
 			<!-- Sidebar - Brand -->
