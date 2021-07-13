@@ -190,7 +190,7 @@
                                                         <div class="form-group">
                                                             <label for="descricao">Descrição</label>
                                                             <form:input path="descricao" cssClass="form-control" />
-                                                            <form:errors path="descricao" cssclass="error">
+                                                            <form:errors path="descricao">
                                                             </form:errors>
                                                         </div>
                                                     </div>
@@ -200,7 +200,7 @@
                                                         <div class="form-group">
                                                             <label for="tipoAtividade">Tipo</label>
                                                             <form:input path="tipoAtividade" cssClass="form-control" />
-                                                            <form:errors path="tipoAtividade" cssclass="error">
+                                                            <form:errors path="tipoAtividade">
                                                             </form:errors>
                                                         </div>
                                                     </div>
