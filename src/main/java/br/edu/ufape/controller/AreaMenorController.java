@@ -53,9 +53,14 @@ public class AreaMenorController {
 	@RequestMapping(value= "/update/{id}" )
 	public String update(@PathVariable("id") Long id, Model model) {
 
+		List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+		// Passando para o modelo a colection/lista.
+		model.addAttribute("areasAtuacao", areasAtuacao);
+		//Cria e passa para o model uma "AreaMenor" vazia.
 		// Procura o objeto AreaMenor pelo seu id.
 		Optional<AreaMenor> areaMenor = areaMenorDAOI.findById(id);
 		// Passando para o modelo o objeto captado acima.
+		model.addAttribute("selecionado", areaMenor.get().getAreaatuacao().getId());
 		model.addAttribute("areaMenorForm", areaMenor.get());
 		// Verifica se o obejto está vazio.			
 		if (!areaMenor.isEmpty()) {
