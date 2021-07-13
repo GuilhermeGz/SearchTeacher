@@ -194,6 +194,7 @@
 															<th>Id</th>
 															<th>Nome</th>
 															<th>Descricao</th>
+															<th>Area de Atuação</th>
 															<th>Ações</th>
 														</tr>
 
@@ -207,6 +208,7 @@
 																<td>${areaMenor.id}</td>
 																<td>${areaMenor.nome}</td>
 																<td>${areaMenor.descricao}</td>
+																<td>${areaMenor.areaatuacao.getNome()}</td>
 
 
 																<td class="text-center">

@@ -198,6 +198,7 @@
 															<th>Descrição</th>
 															<th>Tipo</th>
 															<th>Datas ínicio-fim</th>
+															<th>Area Atuação</th>
 															<th>Ações</th>
 														</tr>
 													</thead>
@@ -212,6 +213,7 @@
 																<td>${atividadeDesenvolvida.tipoAtividade}</td>
 																<td>${atividadeDesenvolvida.exibirDataInicio} -
 																	${atividadeDesenvolvida.exibirDataFinal}</td>
+																<td>${atividadeDesenvolvida.areaatuacao.getNome()}</td>
 
 
 																<td class="text-center">

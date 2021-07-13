@@ -142,6 +142,9 @@ public class AtividadeDesenvolvidaController {
 
 		//Verificação de erro
 		if(bindingResult.hasErrors()) {
+			List<AreaAtuacao> areasAtuacao = areaAtuacaoDAOI.findAll();
+			// Passando para o modelo a colection/lista.
+			model.addAttribute("areasAtuacao", areasAtuacao);
 			return "AtividadeDesenvolvida/newatividadedesenvolvida";
 		}
 
