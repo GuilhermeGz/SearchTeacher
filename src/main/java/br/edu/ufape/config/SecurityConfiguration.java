@@ -50,11 +50,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
         .antMatchers( "/api/**").hasAnyAuthority("ADMIN");
-		http.authorizeRequests().anyRequest().authenticated();
-          
-        http.formLogin().permitAll();
-        
-        http.logout().permitAll();
+		http.authorizeRequests()
+        .antMatchers( "/professor/**").hasAnyAuthority("ADMIN");
+		http.authorizeRequests()
+        .antMatchers( "/formacao/**").hasAnyAuthority("ADMIN");
+		http.authorizeRequests()
+        .antMatchers( "/instituicao/**").hasAnyAuthority("ADMIN");
+		http.authorizeRequests()
+        .antMatchers( "/areamenor/**").hasAnyAuthority("ADMIN");
+		http.authorizeRequests()
+        .antMatchers( "/atividadedesenvolvida/**").hasAnyAuthority("ADMIN");
+		http.authorizeRequests()
+        .antMatchers( "/home").permitAll();
+		http.authorizeRequests()
+        .antMatchers( "/").permitAll();
+
+        http.formLogin().loginPage("/login");
+        http.logout().logoutSuccessUrl("/login?logout").permitAll();
        
 		
 	 

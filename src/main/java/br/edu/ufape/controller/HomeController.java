@@ -31,7 +31,7 @@ public class HomeController {
 		);
 		}
 		
-		return "Professor/listaprofessor";
+		return "Home/index";
 		
 	}
 }

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ufape.model.Professor;
@@ -18,22 +19,27 @@ import br.edu.ufape.model.Usuario;
 import br.edu.ufape.repository.UsuarioDAOI;
 
 @Controller
-@RequestMapping ("/usuario")
-public class UsuarioController {
+public class LoginController {
 
 	@Autowired
 	UsuarioDAOI usuarioDAOI;
 
-	@RequestMapping("/login")
+	
+	@RequestMapping(method= RequestMethod.GET,path="/login")
+	public String entrar() {
+
+		return "login";
+	}
+	/*@RequestMapping("/login")
 	public ModelAndView login() {
 
 		Usuario usuarioForm = new Usuario();
 		ModelAndView mv= new ModelAndView();
 		mv.addObject("usuarioForm", usuarioForm);
-		mv.setViewName("/Usuario/login");
+		mv.setViewName("/Login/login");
 
 		return mv;
-	}
+	}*/
 
 
 	@RequestMapping("/efetuarlogin")
@@ -55,13 +61,13 @@ public class UsuarioController {
 		if (usuario!=null && usuario.getId()>0) {
 		
 			request.getSession().setAttribute("usuarioLogado", usuarioForm);
-			mv.setViewName("/Usuario/usuariologado");
+			mv.setViewName("Professor/listaprofessor");
 			System.out.println("usuário logado com sucesso="+ usuarioForm.getLogin());
 		}
 		
 		else{
 			mv.addObject("errors", "Usuário ou Senha inválido");
-			mv.setViewName("/Usuario/login");
+			mv.setViewName("/Login/login");
 			
 		}
 		

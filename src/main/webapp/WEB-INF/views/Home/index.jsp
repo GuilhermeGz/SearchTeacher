@@ -25,7 +25,7 @@
             <div class="sidebar-brand-text mx-3">
                 <h4 class="h4">SearchTeacher</h4>
             </div>
-            <a class="btn btn-primary" href="#signup">Entrar</a>
+            <a class="btn btn-primary" href="/login">Entrar</a>
         </div>
     </nav>
     <!-- Masthead-->
