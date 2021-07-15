@@ -1,3 +1,7 @@
+<%@page import="br.edu.ufape.model.Professor" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -48,46 +52,27 @@
                     <thead class="text-center">
                         <th scope="col">ID lattes</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Área de Atuação</th>
+                        <th scope="col">Ãrea de AtuaÃ§Ã£o</th>
                         <th scope="col">Visualizar</th>
 
                     </thead>
                     <tbody class="text-center">
-                    <tr>
-                        <td>2fds2f</td>
-                        <td>Mark Copyright</td>
-                        <td>Doutorado em Banco de dados</td>
-                        <td class="text-center">
-                            <a href="" class="btn btn-primary"> 
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2fds2f</td>
-                        <td>Jacob Marx Fels</td>
-                        <td>Analista de dados</td>
-                        <td class="text-center">
-                            <a href="" class="btn btn-primary"> 
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2fds2f</td>
-                        <td>Larry  Frota José silva</td>
-                        <td>Cientista de dados</td>
-                        <td class="text-center">
-                            <a href=""
-                                class="btn btn-primary"> <i
-                                    class="fas fa-search"></i>
-                            </a>
-                        </td>
-                        
-                    </tr>
+	                    <c:forEach var="professor" items="${professores}">
+														
+		                    <tr>
+		                        <td>${professor.idLattes}</td>
+		                        <td>${professor.nome}</td>
+		                        <td>${professor.getAreasAtuacoes()[0].getNome()}</td>
+		                        <td class="text-center">
+		                            <a href="/perfil/${professor.id}" class="btn btn-primary"> 
+		                                <i class="fas fa-search"></i>
+		                            </a>
+		                        </td>
+		                    </tr>
+                    	</c:forEach>
                     </tbody>
                 </table>
-            
+            <a type="button"class="btn btn-primary btn-user btn-block" href="/home">Voltar</a>
             </div>
         </div>
     </div>

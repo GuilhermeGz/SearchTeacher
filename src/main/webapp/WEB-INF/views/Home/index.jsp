@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -38,22 +39,18 @@
                         <!-- Page heading-->
                         <h1 class=" mb-2">Encontre um professor!</h1>
 
-                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form class="form-subscribe" action="/buscar" method="post">
                             <!-- Email address input-->
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddress" type="email"
-                                        placeholder="Nome, formação, área de pesquisa ..."
-                                        data-sb-validations="required,email" />
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">
-                                        Email Address is required.</div>
-                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email
-                                        Address Email is not valid.</div>
+                                    <input name="busca"  class="form-control form-control-lg" type="text"
+                                        placeholder="Nome, formação, área de pesquisa ..." />
+                            	</div>
+                                <div class="col-auto">
+                                	<button class="btn btn-primary btn-lg" id="submitButton"
+                                        type="submit">Buscar</button>
                                 </div>
-                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                        type="submit">Busca</button></div>
                             </div>
-
 
                         </form>
                     </div>
@@ -146,6 +143,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../../resources/index/js/scripts.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    
 </body>
 
 </html>

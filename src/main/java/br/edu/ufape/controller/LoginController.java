@@ -30,6 +30,8 @@ public class LoginController {
 
 		return "login";
 	}
+	
+
 	/*@RequestMapping("/login")
 	public ModelAndView login() {
 

@@ -78,7 +78,8 @@
 											</div>
 				
 											<div class="form-group">
-												<button class="btn btn-primary btn-user btn-block">Entrar</button>
+												<button class="btn btn-primary btn-user btn-block" >Entrar</button>
+												<a type="button"class="btn btn-primary btn-user btn-block" href="/home">Voltar</a>
 											</div>
 				
 											
@@ -108,8 +109,10 @@
 	
 	    <!-- Core plugin JavaScript-->
 	    <script src="../resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-	
+				
 	    <!-- Custom scripts for all pages-->
 	    <script src="../resources/js/sb-admin-2.min.js"></script>
+	    
+	     
 	</body>
 </html>

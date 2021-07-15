@@ -9,14 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.edu.ufape.model.Professor;
 
 @Controller
 public class HomeController {
 	
 	
 	@RequestMapping(value={"/", "/home"})
-	public String home(HttpServletRequest request, Principal principal) {
+	public String home(HttpServletRequest request, Principal principal,Model model) {
 			
 				
 		List <GrantedAuthority> authorities= (List<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
