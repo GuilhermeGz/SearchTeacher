@@ -161,6 +161,9 @@ public class ProfessorController {
 			) {
 		//Verificação de erro
 		if(bindingResult.hasErrors( )) {
+			List<Instituicao> instituicoes = instituicaoDAOI.findAll();
+			// Passando para o modelo a colection/lista.
+			model.addAttribute("instituicoes", instituicoes);
 			return "Professor/newprofessor";
 		}
 		// Salva as alterações realizadas através do form.

@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -44,8 +45,8 @@ public class AreaAtuacao {
 	private String descricao;
 	
 	
-	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao")
-	List<AreaMenor> areaMenor;
+	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao",fetch = FetchType.LAZY)
+	List<AreaMenor> areasMenores;
 	
 	@OneToMany(cascade = CascadeType.REMOVE,mappedBy="areaatuacao")
 	List<AtividadeDesenvolvida> AtividadeDesenvolvida;
@@ -85,12 +86,12 @@ public class AreaAtuacao {
 		this.descricao = descricao;
 	}
 
-	public List<AreaMenor> getAreaMenor() {
-		return areaMenor;
+	public List<AreaMenor> getAreasMenores() {
+		return areasMenores;
 	}
 
-	public void setAreaMenor(List<AreaMenor> areaMenor) {
-		this.areaMenor = areaMenor;
+	public void setAreasMenores(List<AreaMenor> areaMenor) {
+		this.areasMenores = areaMenor;
 	}
 
 	public List<AtividadeDesenvolvida> getAtividadeDesenvolvida() {

@@ -52,7 +52,7 @@
                     <thead class="text-center">
                         <th scope="col">ID lattes</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Ãrea de AtuaÃ§Ã£o</th>
+                        <th scope="col">Área de Atuação</th>
                         <th scope="col">Visualizar</th>
 
                     </thead>

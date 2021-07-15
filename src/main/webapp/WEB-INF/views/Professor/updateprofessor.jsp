@@ -39,7 +39,8 @@
                     <div id="wrapper">
 
                         <!-- Sidebar -->
-                        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                        id="accordionSidebar" style="background-image: url('../../resources/index/assets/img/bg-masthead.jpg')">
 
                             <!-- Sidebar - Brand -->
                             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -167,7 +168,7 @@
                                     <!-- Page Heading -->
                                     <div class="card shadow mb-4">
                                         <div class="card-title ml-4	mt-4">
-                                            <h4>Editar Instituição</h4>
+                                            <h4>Editar Professor</h4>
                                         </div>
 
                                         <hr class="sidebar-divider mt-2 d-md-block">
